@@ -1,0 +1,44 @@
+# Production directories
+output/
+build/
+dist/
+
+# Test directories
+.vscode-test
+test/
+
+# Cache directory
+.cache/
+
+# Node Package manager directory
+.npm
+
+# Yarn directories
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+.pnp.*
+
+# Dependency directories
+bower_components/
+jspm_packages/
+node_modules/
+web_modules/
+
+# Logs
+yarn-error.log*
+yarn-debug.log*
+npm-debug.log*
+*.log
+logs
+
+# Package Lock
+package-lock.json
+yarn.lock
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Optional eslint cache
+.eslintcache
