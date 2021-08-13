@@ -1,0 +1,31 @@
+@use '../typography'as Typography;
+@use '../elevation'as Elevation;
+@use '../animation'as Animation;
+@use '../color'as Color;
+
+/*  Typography  */
+$font-family: Typography.$font-family;
+$font-size: Typography.$font-size--2;
+$font-weight: Typography.$font-weight--4;
+$line-height: Typography.$line-height--0;
+$letter-spacing: Typography.$letter-spacing--5;
+$margin: Typography.$font-size--2 0;
+$text-transform: initial;
+$text-decoration: none;
+$white-space: normal;
+$text-align: center;
+/*  Decoration  */
+$border-width: 0.0625rem;
+$border-style: solid;
+$border-radius: 999rem;
+$color: Color.$text-color--1;
+$border-color: Color.$border-color--1;
+$background-color: Color.$background-color--1;
+$box-shadow: Elevation.$elevation--2;
+/*  Spacing  */
+$margin: 0;
+$padding: 0 1rem;
+/*  Sizing  */
+$height: 2rem;
+$min-width: fit-content;
+$max-width: max-content;

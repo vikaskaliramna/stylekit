@@ -1,0 +1,50 @@
+@use './badge-variables'as Badge;
+@use '../typography'as Typography;
+@use '../elevation'as Elevation;
+@use '../animation'as Animation;
+@use '../color'as Color;
+
+.badge {
+  &:not(&--start)[data-badge]:after,
+  &--end:not(&--start)[data-badge]:after,
+  &--start[data-badge]:before {
+    /*  Typography  */
+    font-family: Badge.$font-family;
+    font-size: Badge.$font-size;
+    font-weight: Badge.$font-weight;
+    line-height: Badge.$line-height;
+    letter-spacing: Badge.$letter-spacing;
+    text-decoration: Badge.$text-decoration;
+    text-transform: Badge.$text-transform;
+    text-align: Badge.$text-align;
+    /*  Decoration  */
+    border-width: Badge.$border-width;
+    border-radius: Badge.$border-radius;
+    background-color: Badge.$background-color;
+    box-shadow: none;
+    /*  Spacing  */
+    padding: 0.25rem;
+    margin: 0;
+    /*  Sizing  */
+    width: fit-content;
+    /*  Position  */
+    position: relative;
+    /*  Flexbox  */
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    content: attr(data-badge);
+  }
+
+  &[data-badge]:after,
+  &--end[data-badge]:after {
+    margin-left: Badge.$margin;
+  }
+
+  &--start[data-badge]:before {
+    margin-right: Badge.$margin;
+  }
+}

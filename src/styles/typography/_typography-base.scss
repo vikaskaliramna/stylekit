@@ -1,0 +1,129 @@
+@use '../layout'as Layout;
+@use '../color'as Color;
+@use './'as Typography;
+
+/*Base */
+body {
+  font-family: Typography.$font-family;
+  font-size: Typography.$font-size--3;
+  font-weight: Typography.$font-weight--4;
+  line-height: Typography.$line-height--2;
+  letter-spacing: Typography.$letter-spacing--2;
+  color: Color.$text-color;
+}
+
+.#{body--1, p} {
+  font-family: Typography.$font-family;
+  font-size: Typography.$font-size--2;
+  font-weight: Typography.$font-weight--4;
+  line-height: Typography.$line-height--5;
+  letter-spacing: Typography.$letter-spacing--2;
+  word-spacing: Typography.$word-spacing--3;
+  margin: Typography.$margin;
+  text-decoration: none;
+  white-space: normal;
+  color: Color.$text-color;
+}
+
+/*Headliness*/
+.#{headline--1, h1} {
+  font-family: Typography.$font-family;
+  font-size: Typography.$font-size--xlarge--1;
+  font-weight: Typography.$font-weight--4;
+  line-height: Typography.$line-height--2;
+  letter-spacing: Typography.$letter-spacing--4;
+  margin: Typography.$margin;
+  text-decoration: none;
+  white-space: normal;
+  color: Color.$text-color;
+
+  @include Layout.breakpoint("md", max) {
+    font-size: Typography.$font-size--large--3;
+    font-weight: Typography.$font-weight--5;
+  }
+}
+
+.#{headline--2, h2} {
+  font-family: Typography.$font-family;
+  font-size: Typography.$font-size--large--3;
+  font-weight: Typography.$font-weight--4;
+  line-height: Typography.$line-height--2;
+  letter-spacing: Typography.$letter-spacing--4;
+  margin: Typography.$margin;
+  text-decoration: none;
+  white-space: normal;
+  color: Color.$text-color;
+
+  @include Layout.breakpoint("md", max) {
+    font-size: Typography.$font-size--large--2;
+    font-weight: Typography.$font-weight--4;
+  }
+}
+
+.#{headline--3, h3} {
+  font-family: Typography.$font-family;
+  font-size: Typography.$font-size--large--2;
+  font-weight: Typography.$font-weight--4;
+  line-height: Typography.$line-height--2;
+  letter-spacing: Typography.$letter-spacing--2;
+  margin: Typography.$margin;
+  text-decoration: none;
+  white-space: normal;
+  color: Color.$text-color;
+
+  @include Layout.breakpoint("md", max) {
+    font-size: Typography.$font-size--large--1;
+    font-weight: Typography.$font-weight--5;
+  }
+}
+
+.#{headline--4, h4} {
+  font-family: Typography.$font-family;
+  font-size: Typography.$font-size--large--1;
+  font-weight: Typography.$font-weight--4;
+  line-height: Typography.$line-height--2;
+  letter-spacing: Typography.$letter-spacing--2;
+  margin: Typography.$margin;
+  text-decoration: none;
+  white-space: normal;
+  color: Color.$text-color;
+
+  @include Layout.breakpoint("md", max) {
+    font-size: Typography.$font-size--large--0;
+    font-weight: Typography.$font-weight--5;
+  }
+}
+
+.#{headline--5, h5} {
+  font-family: Typography.$font-family;
+  font-size: Typography.$font-size--5;
+  font-weight: Typography.$font-weight--6;
+  line-height: Typography.$line-height--2;
+  letter-spacing: Typography.$letter-spacing--2;
+  margin: Typography.$margin;
+  text-decoration: none;
+  white-space: normal;
+  color: Color.$text-color;
+
+  @include Layout.breakpoint("md", max) {
+    font-size: Typography.$font-size--5;
+    font-weight: Typography.$font-weight--7;
+  }
+}
+
+.#{headline--6, h6} {
+  font-family: Typography.$font-family;
+  font-size: Typography.$font-size--3;
+  font-weight: Typography.$font-weight--6;
+  line-height: Typography.$line-height--2;
+  letter-spacing: Typography.$letter-spacing--2;
+  margin: Typography.$margin;
+  text-decoration: none;
+  white-space: normal;
+  color: Color.$text-color;
+
+  @include Layout.breakpoint("md", max) {
+    font-size: Typography.$font-size--2;
+    font-weight: Typography.$font-weight--7;
+  }
+}

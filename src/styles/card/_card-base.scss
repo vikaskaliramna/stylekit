@@ -1,0 +1,158 @@
+@use './card-variables'as Card;
+@use '../typography'as Typography;
+@use '../elevation'as Elevation;
+@use '../animation'as Animation;
+@use '../color'as Color;
+@use 'sass:math';
+
+.card {
+  border-radius: Card.$border-radius;
+  border-width: Card.$border-width;
+  border-style: Card.$border-style;
+  border-color: Card.$border-color;
+  background-color: Card.$background-color;
+  transition: Animation.default(box-shadow, 0.25s);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+
+  &--outlined {
+    box-shadow: Elevation.$elevation--1;
+  }
+
+  &--raised {
+    box-shadow: Elevation.$elevation--2;
+  }
+
+  &--raised-extra {
+    box-shadow: Elevation.$elevation--3;
+  }
+
+  & :first-child {
+    border-top-left-radius: Card.$border-radius;
+    border-top-right-radius: Card.$border-radius;
+  }
+
+  & :last-child {
+    border-bottom-left-radius: Card.$border-radius;
+    border-bottom-right-radius: Card.$border-radius;
+  }
+
+  // Card Content
+  &-content {
+    padding: Card.$content-padding;
+    width: 100%;
+    display: block;
+    box-sizing: border-box;
+
+    // Card Action
+    &-action {
+      padding: 0;
+      width: 100%;
+      display: block;
+      box-sizing: border-box;
+
+      &--fluid {
+        padding: 0;
+      }
+    }
+  }
+
+  // Card Typography
+  &-title {
+    font-size: Typography.$font-size--large--1;
+    text-decoration: none;
+    color: Card.$color;
+
+    & a {
+      font-size: Typography.$font-size--5;
+      text-decoration: none;
+      color: Card.$color;
+    }
+  }
+
+  &-subtitle {
+    font-size: Typography.$font-size--4;
+    text-decoration: none;
+    color: Card.$color;
+    opacity: 0.9;
+  }
+
+  &-text {
+    font-size: Typography.$font-size--2;
+    text-decoration: none;
+    color: Card.$color;
+  }
+
+  // Card Media
+  &-media {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    position: relative;
+    box-sizing: border-box;
+
+    &::before {
+      display: block;
+      content: "";
+    }
+
+    & :first-child {
+      border-top-left-radius: Card.$border-radius;
+      border-top-right-radius: Card.$border-radius;
+    }
+
+    & :last-child {
+      border-bottom-left-radius: Card.$border-radius;
+      border-bottom-right-radius: Card.$border-radius;
+    }
+
+    &--square::before {
+      padding-top: 100%;
+    }
+
+    &--16-9 {
+      padding-top: 56.25%;
+    }
+
+    &-contain {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      box-sizing: border-box;
+    }
+  }
+
+  // Floating Action Button
+  &-fab {
+    border: 0;
+    border-radius: 999rem;
+    box-shadow: Elevation.$elevation--4;
+    width: Card.$fab-height;
+    min-width: Card.$fab-width;
+    height: Card.$fab-width;
+    position: absolute;
+    transform: translateY(-#{math.div(Card.$fab-height, 1.1)});
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+
+    &--left {
+      left: math.div(Card.$fab-height, 3);
+    }
+
+    &--right {
+      right: math.div(Card.$fab-height, 3);
+    }
+  }
+
+  // Fix for border-radius conflict between card: first-child and fab
+  & &-fab {
+    border-radius: 999rem;
+  }
+}

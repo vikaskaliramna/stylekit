@@ -1,0 +1,329 @@
+@use './navigation-variables'as Navigation;
+@use '../typography'as Typography;
+@use '../elevation'as Elevation;
+@use '../animation'as Animation;
+@use '../color'as Color;
+
+.layout {
+  margin: 0;
+  padding: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+  display: block;
+  overflow: hidden;
+
+  &-body {
+    background-color: #ffffff;
+    // transition: animation__function-default(top),
+    //     animation__function-default(left),
+    //     animation__function-default(right),
+    //     animation__function-default(bottom);
+    // top: 0;
+    // left: 0;
+    // right: 0;
+    // bottom: 0;
+    inset: 0 0 0 0;
+    position: fixed;
+    display: block;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  &-contain-appbar &-body {
+    top: Navigation.$height;
+  }
+
+  &-contain-sidebar &-body {
+    left: 0;
+  }
+
+  &--active {
+    .drawer {
+      transform: translateX(0);
+    }
+
+    .layout-body {
+      left: 0;
+    }
+  }
+
+  // @media screen and (min-width: $layout__breakpoint-large) {
+  //     &-contain-sidebar &-body {
+  //         left: $drawer__width;
+  //     }
+
+  //     &-contain-sidebar .drawer {
+  //         transform: translateX(0);
+  //     }
+  // }
+}
+
+.appbar {
+  background: #ffffff;
+  // transition: animation__function-default(background-color--text-color--1,
+  //     animation__function-default(border-color--text-color--1,
+  //     animation__function-default(color--text-color--1;
+  width: Navigation.$width;
+  height: Navigation.$height;
+  margin: Navigation.$margin;
+  padding: Navigation.$padding;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  vertical-align: middle;
+  box-sizing: border-box;
+
+  &:not(&--bottom) {
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    bottom: initial;
+  }
+
+  &--bottom {
+    position: fixed;
+    z-index: 9;
+    top: initial;
+    bottom: 0;
+  }
+
+  &--raised {
+    box-shadow: Elevation.$elevation--2;
+  }
+
+  &-content {
+    width: Navigation.$content-width;
+    height: Navigation.$content-height;
+    margin: Navigation.$content-margin;
+    padding: Navigation.$content-padding;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+    vertical-align: middle;
+    overflow-x: auto;
+    box-sizing: border-box;
+  }
+
+  &-title {
+    font-family: Typography.$font-family--Roboto;
+    font-size: Typography.$font-size--2;
+    font-weight: Typography.$font-weight--2;
+    line-height: Typography.$line-height--2;
+    letter-spacing: Typography.$letter-spacing--2;
+    // text-decoration: Typography.$text-decoration;
+    // text-transform: Button.$text-transform;
+    // text-align: Button.$text-align;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 0.25rem;
+    border-color: transparent;
+    background-color: transparent;
+    padding: 0 0.75rem;
+    width: max-content;
+    min-width: fit-content;
+    height: Navigation.$height/1.75;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    cursor: pointer;
+  }
+
+  &-icon {
+    font-family: Typography.$font-family--Roboto;
+    font-size: Typography.$font-size--2;
+    font-weight: Typography.$font-weight--2;
+    line-height: Typography.$line-height--2;
+    letter-spacing: Typography.$letter-spacing--2;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 999rem;
+    border-color: transparent;
+    background-color: transparent;
+    padding: 0 0.75rem;
+    width: max-content;
+    min-width: fit-content;
+    height: Navigation.$height/1.75;
+    width: Navigation.$height/1.75;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    cursor: pointer;
+  }
+
+  &-item {
+    font-family: Typography.$font-family--Roboto;
+    font-size: Typography.$font-size--2;
+    font-weight: Typography.$font-weight--5;
+    line-height: Typography.$line-height--2;
+    letter-spacing: Typography.$letter-spacing--2;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 0.25rem;
+    border-color: transparent;
+    background-color: transparent;
+    padding: 0 0.75rem;
+    width: max-content;
+    min-width: fit-content;
+    height: Navigation.$height/1.75;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    cursor: pointer;
+  }
+
+  // Responsive Appbar (Beta)
+  // @media (max-width: $layout__breakpoint-small) {
+  //     height: Navigation.$height*1.6;
+  //     flex-direction: column;
+  //     align-items: center;
+  //     justify-content: center;
+
+  //     &-content {
+  //         align-items: center;
+  //         justify-content: center;
+  //         margin: 0;
+  //         width: 100%;
+  //         overflow-y: hidden;
+  //         overflow-x: auto;
+  //     }
+
+  //     &-title,
+  //     &-item,
+  //     &-icon {
+  //         height: Navigation.$height/1.25;
+  //         min-width: fit-content;
+  //     }
+  // }
+
+  &-fab {
+    width: Navigation.$height;
+    height: Navigation.$height;
+    border-radius: 999rem;
+    // @include elevation__mixin-2;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+
+    &--raised {
+      left: calc(50% - #{Navigation.$height}/ 2);
+      top: calc(50% - #{Navigation.$height}/ 2 - #{Navigation.$height/2});
+    }
+
+    &--lowered {
+      left: calc(50% - #{Navigation.$height}/ 2);
+      top: calc(50% - #{Navigation.$height}/ 2 + #{Navigation.$height/2});
+    }
+  }
+
+  &--primary {
+    color: Color.$theme--text-color--1;
+    border-color: transparent;
+    background-color: Color.$theme--color;
+  }
+
+  &--primary &-item,
+  &--primary &-title {
+    color: Color.$theme--text-color--1;
+    border-color: transparent;
+    background-color: Color.$theme--color;
+  }
+
+  &--secondary {
+    color: Color.$theme--secondary--text-color--1;
+    border-color: transparent;
+    background-color: Color.$theme--secondary--color;
+  }
+
+  &--secondary &-item,
+  &--secondary &-title {
+    color: Color.$theme--secondary--text-color--1;
+    border-color: transparent;
+    background-color: Color.$theme--secondary--color;
+  }
+
+  // &--dark {
+  //     color: Color.$theme--dark);
+  //     border-color: transparent;
+  //     background-color: Color.$theme--dark;
+  // }
+
+  // &--dark &-item,
+  // &--dark &-title {
+  //     color: Color.$theme--dark);
+  //     border-color: transparent;
+  //     background-color: Color.$theme--dark;
+  // }
+
+  // &--light {
+  //     color: Color.$theme--light);
+  //     border-color: transparent;
+  //     background-color: Color.$theme--light;
+  // }
+
+  // &--light &-item,
+  // &--light &-title {
+  //     color: Color.$theme--light);
+  //     border-color: transparent;
+  //     background-color: Color.$theme--light;
+  // }
+}
+
+// Drawer
+.drawer {
+  background-color: #ffffff;
+  transition: animation__function-default(transform),
+    animation__function-default(background-color),
+    animation__function-default(border-color),
+    animation__function-default(color);
+  padding: 0px 0px 16px;
+  height: 100%;
+  width: $drawer__width;
+  // height: 100%;
+  z-index: 90;
+  position: fixed;
+  top: Navigation.$height;
+  bottom: 0;
+  left: 0;
+  transform: translateX(-#{$drawer__width * 1.1});
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+
+  &--raised {
+    // @include elevation__mixin-2;
+  }
+
+  &-content {
+    width: 100%;
+    height: 100%;
+    display: block;
+    overflow-y: auto;
+  }
+
+  &-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    height: 120vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 997;
+    display: none;
+  }
+}

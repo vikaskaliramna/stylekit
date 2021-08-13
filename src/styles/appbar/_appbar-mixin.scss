@@ -1,0 +1,18 @@
+@mixin theme($class, $color, $text-color) {
+  &--#{$class} {
+    color: $text-color;
+    background-color: $color;
+  }
+
+  &--#{$class} .appbar-item {
+    color: $text-color;
+    border-color: transparent;
+    background-color: transparent;
+  }
+
+  &--text-#{$class} &-item {
+    &:hover {
+      color: $color;
+    }
+  }
+}

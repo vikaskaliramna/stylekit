@@ -1,0 +1,54 @@
+@use './'as Color;
+
+:root {
+  // Text Color
+  --light-mode-text-color: #{Color.$light-mode-text-color};
+  --light-mode-text-color--1: #{Color.$light-mode-text-color--1};
+  --light-mode-text-color--2: #{Color.$light-mode-text-color--2};
+  --light-mode-text-color--3: #{Color.$light-mode-text-color--3};
+  --light-mode-text-color--4: #{Color.$light-mode-text-color--4};
+  // Border Color
+  --light-mode-border-color: #{Color.$light-mode-border-color};
+  --light-mode-border-color--1: #{Color.$light-mode-border-color--1};
+  --light-mode-border-color--2: #{Color.$light-mode-border-color--2};
+  --light-mode-border-color--3: #{Color.$light-mode-border-color--3};
+  --light-mode-border-color--4: #{Color.$light-mode-border-color--4};
+  // Background Color
+  --light-mode-background-color: #{Color.$light-mode-background-color};
+  --light-mode-background-color--1: #{Color.$light-mode-background-color--1};
+  --light-mode-background-color--2: #{Color.$light-mode-background-color--2};
+  --light-mode-background-color--3: #{Color.$light-mode-background-color--3};
+  --light-mode-background-color--4: #{Color.$light-mode-background-color--4};
+  // Text Color
+  --dark-mode-text-color: #{Color.$text-color};
+  --dark-mode-text-color--1: #{Color.$text-color--1};
+  --dark-mode-text-color--2: #{Color.$text-color--2};
+  --dark-mode-text-color--3: #{Color.$text-color--3};
+  --dark-mode-text-color--4: #{Color.$text-color--4};
+  // Border Color
+  --dark-mode-border-color: #{Color.$border-color};
+  --dark-mode-border-color--1: #{Color.$border-color--1};
+  --dark-mode-border-color--2: #{Color.$border-color--2};
+  --dark-mode-border-color--3: #{Color.$border-color--3};
+  --dark-mode-border-color--4: #{Color.$border-color--4};
+  // Background Color
+  --dark-mode-background-color: #{Color.$background-color};
+  --dark-mode-background-color--1: #{Color.$background-color--1};
+  --dark-mode-background-color--2: #{Color.$background-color--2};
+  --dark-mode-background-color--3: #{Color.$background-color--3};
+  --dark-mode-background-color--4: #{Color.$background-color--4};
+}
+
+
+/*  Primary  */
+@include Color.theme("primary", Color.$theme--color, Color.$theme--text-color);
+/*  Secondary  */
+@include Color.theme("secondary", Color.$theme--secondary--color, Color.$theme--secondary--text-color);
+/*  Info  */
+@include Color.theme("info", Color.$theme--info--color, Color.$theme--info--text-color);
+/*  Success  */
+@include Color.theme("success", Color.$theme--success--color, Color.$theme--success--text-color);
+/*  Warning  */
+@include Color.theme("warning", Color.$theme--warning--color, Color.$theme--warning--text-color);
+/*  Error  */
+@include Color.theme("error", Color.$theme--error--color, Color.$theme--error--text-color);

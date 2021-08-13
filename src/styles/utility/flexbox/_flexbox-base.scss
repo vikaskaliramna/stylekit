@@ -1,0 +1,28 @@
+@use '../../layout'as Layout;
+@use './'as Flexbox;
+
+
+
+@each $each in Flexbox.$display {
+  .d--#{$each} {
+    @include Layout.breakpoint(default) {
+      display: $each;
+    }
+  }
+}
+
+@each $each in Flexbox.$align-items {
+  .row--#{$each} {
+    @include Layout.breakpoint(default) {
+      align-items: $each;
+    }
+  }
+}
+
+@each $each in Flexbox.$justify-content {
+  .column--#{$each} {
+    @include Layout.breakpoint(default) {
+      justify-content: $each;
+    }
+  }
+}

@@ -1,0 +1,33 @@
+@use '../typography'as Typography;
+@use '../elevation'as Elevation;
+@use '../animation'as Animation;
+@use '../color'as Color;
+
+$font-family: Typography.$font-family;
+$font-size: Typography.$font-size--2;
+$font-weight: Typography.$font-weight--4;
+$line-height: Typography.$line-height--0;
+$letter-spacing: Typography.$letter-spacing--3;
+$margin: Typography.$font-size--2 0;
+$text-transform: initial;
+$text-decoration: none;
+$white-space: normal;
+$text-align: left;
+
+$border-width: 0.01rem;
+$border-style: solid;
+$border-radius: 999rem;
+$color: Color.$text-color--1;
+$border-color: Color.$background-color--1;
+$background-color: Color.$background-color--1;
+$box-shadow:Elevation.$elevation--3;
+
+$margin: 0;
+$padding: 0 1rem 0 2rem;
+$height: 3rem;
+$width: 100%;
+
+$button-margin: 0;
+$button-padding: 0;
+$button-height: 3rem;
+$button-width: 3rem;

@@ -1,0 +1,31 @@
+@use './input-variable'as Input;
+
+@mixin theme($class, $color, $text-color) {
+  .input--#{$class} {
+    color: Input.$color;
+    border-color: $color;
+    background-color: Input.$background-color;
+  }
+
+  .input--text-#{$class} {
+    color: $color;
+    border-color: Input.$border-color;
+    background-color: Input.$background-color;
+  }
+
+  .input--outlined-#{$class} {
+    color: $color;
+    border-color: $color;
+    background-color: Input.$background-color;
+  }
+
+  .input--filled-#{$class} {
+    color: $text-color;
+    border-color: $color;
+    background-color: $color;
+
+    &::placeholder {
+      color: $text-color;
+    }
+  }
+}

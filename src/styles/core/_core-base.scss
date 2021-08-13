@@ -1,0 +1,24 @@
+// @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@use '../appbar'as Appbar;
+@use '../color'as Color;
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  background-color: Color.$background-color;
+  margin: 0;
+}
+
+*::selection {
+  color: Color.$theme--text-color !important;
+  background-color: Color.$theme--color !important;
+}
+
+main {
+  padding-top: Appbar.$height;
+}

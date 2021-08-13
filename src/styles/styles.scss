@@ -1,0 +1,278 @@
+body {
+  margin: 0;
+}
+div {
+  -webkit-user-drag: none;
+}
+
+*::-webkit-scrollbar-track {
+  width: 100%;
+  height: 1rem;
+}
+
+*::-webkit-scrollbar-thumb {
+  width: 100%;
+  height: 1rem;
+  background-color: transparent;
+}
+@mixin form-test-elements {
+  input[type="checkbox"] {
+    border-radius: 9999rem;
+    appearance: none;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='rgba%280, 0, 0, 0.25%29'/%3e%3c/svg%3e");
+    background-position: left center;
+    transition: animation__function-default(background-image),
+      animation__function-default(background-position),
+      animation__function-default(background-color);
+    padding: 0;
+    margin: 0 0.25rem;
+    height: 1em;
+    width: 2em;
+    vertical-align: top;
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition: none;
+
+    &:checked {
+      border: 1px solid rgba(0, 0, 0, 0.25);
+      background-color: $color__use-primary;
+      background-position: right center;
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
+    }
+  }
+
+  input[type="radio"] {
+    border-radius: 9999rem;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    background-size: contain;
+    background-color: #ffffff;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: animation__function-default(background-image),
+      animation__function-default(background-position),
+      animation__function-default(background-color);
+    padding: 0;
+    margin: 0 0.25rem;
+    width: 1rem;
+    height: 1rem;
+    vertical-align: top;
+    appearance: none;
+    box-sizing: border-box;
+
+    &:checked {
+      background-color: $color__use-primary;
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2' fill='%23fff'/%3e%3c/svg%3e");
+    }
+  }
+
+  .input {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    vertical-align: middle;
+
+    input[type="text"] {
+      @include typography__mixin-body-2;
+      text-align: start;
+      text-transform: initial;
+      text-decoration: $button__use-text-decoration;
+      border-width: $button__use-border-width;
+      border-style: $button__use-border-style;
+      border-radius: $button__use-border-radius;
+      border-color: #dddddd;
+      background-color: $button__use-background-color;
+      box-shadow: none;
+      margin: $button__use-margin;
+      padding: $button__use-padding;
+      height: $button__use-height;
+      min-width: $button__use-min-width;
+      max-width: $button__use-max-width;
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: flex-start;
+      vertical-align: middle;
+      overflow: hidden;
+      user-select: none;
+      will-change: box-shadow;
+      transition: animation__function-default(box-shadow),
+        animation__function-default(background-color),
+        animation__function-default(border-color),
+        animation__function-default(color);
+      outline: none;
+      cursor: pointer;
+    }
+
+    &-placeholder {
+      @include typography__mixin-caption;
+      letter-spacing: initial;
+      margin: 0 1rem;
+      width: max-content;
+      padding: 0.25rem;
+      background-color: #ffffff;
+      height: max-content;
+      border-radius: 999rem;
+      position: absolute;
+      text-transform: initial;
+      color: #aaaaaa;
+      transition: animation__function-default(transform),
+        animation__function-default(background-color),
+        animation__function-default(margin, 1s),
+        animation__function-default(color);
+    }
+
+    &:focus-within input {
+      border-color: $color__use-primary;
+    }
+
+    &:focus-within &-placeholder {
+      z-index: 1;
+      transform: translateY(-#{$button__use-height/2});
+      color: $color__use-primary;
+    }
+  }
+
+  .input-outlined {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    vertical-align: middle;
+
+    input[type="text"] {
+      @include typography__mixin-body-2;
+      text-align: start;
+      text-transform: initial;
+      text-decoration: $button__use-text-decoration;
+      border: 0;
+      border-bottom-width: $button__use-border-width;
+      border-style: $button__use-border-style;
+      border-radius: 0;
+      border-color: #dddddd;
+      background-color: $button__use-background-color;
+      box-shadow: none;
+      margin: $button__use-margin;
+      padding: $button__use-padding;
+      height: $button__use-height;
+      min-width: $button__use-min-width;
+      max-width: $button__use-max-width;
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: flex-start;
+      vertical-align: middle;
+      overflow: hidden;
+      user-select: none;
+      will-change: box-shadow;
+      transition: animation__function-default(box-shadow),
+        animation__function-default(background-color),
+        animation__function-default(border-color),
+        animation__function-default(color);
+      outline: none;
+      cursor: pointer;
+    }
+
+    &-placeholder {
+      @include typography__mixin-caption;
+      letter-spacing: initial;
+      margin: 0 1rem;
+      width: max-content;
+      padding: 0.25rem;
+      background-color: #ffffff;
+      height: max-content;
+      border-radius: 999rem;
+      position: absolute;
+      text-transform: initial;
+      color: #aaaaaa;
+      transition: animation__function-default(transform),
+        animation__function-default(font-size),
+        animation__function-default(margin, 1s),
+        animation__function-default(color);
+    }
+
+    &:focus-within input {
+      border-color: $color__use-primary;
+    }
+
+    &:focus-within &-placeholder {
+      font-size: 50%;
+      z-index: 1;
+      transform: translateY(-#{$button__use-height/2});
+      color: $color__use-primary;
+    }
+  }
+
+  .input-text-area {
+    padding: $button__use-height/2;
+    position: relative;
+    display: inline-flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    vertical-align: middle;
+
+    textarea {
+      @include typography__mixin-body-2;
+      text-align: start;
+      text-transform: initial;
+      text-decoration: $button__use-text-decoration;
+      border-width: $button__use-border-width;
+      border-style: $button__use-border-style;
+      border-radius: $button__use-border-radius;
+      border-color: #dddddd;
+      background-color: $button__use-background-color;
+      box-shadow: none;
+      margin: $button__use-margin;
+      padding: 0.5rem;
+      height: $button__use-height + $button__use-height;
+      min-width: $button__use-min-width;
+      max-width: $button__use-max-width;
+      position: relative;
+      display: inline-flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      vertical-align: middle;
+      overflow: hidden;
+      user-select: none;
+      will-change: box-shadow;
+      transition: animation__function-default(box-shadow),
+        animation__function-default(background-color),
+        animation__function-default(border-color),
+        animation__function-default(color);
+      outline: none;
+      cursor: pointer;
+    }
+
+    &-placeholder {
+      display: flex;
+      align-self: flex-start;
+      @include typography__mixin-caption;
+      letter-spacing: initial;
+      margin: 0 1rem;
+      width: max-content;
+      padding: 0.5rem 0.25rem;
+      background-color: #ffffff;
+      height: max-content;
+      border-radius: 999rem;
+      position: absolute;
+      text-transform: initial;
+      color: #aaaaaa;
+      transition: animation__function-default(transform),
+        animation__function-default(font-size),
+        animation__function-default(margin, 1s),
+        animation__function-default(color);
+    }
+
+    &:focus-within textarea {
+      border-color: $color__use-primary;
+    }
+
+    &:focus-within &-placeholder {
+      z-index: 1;
+      transform: translateY(-#{$button__use-height/2.5});
+      color: $color__use-primary;
+    }
+  }
+}

@@ -1,0 +1,176 @@
+@use '../typography'as Typography;
+@use '../elevation'as Elevation;
+@use '../animation'as Animation;
+@use '../layout'as Layout;
+@use '../color'as Color;
+@use './'as Appbar;
+@use 'sass:math';
+
+/* Task - Add responsiveness*/
+.appbar {
+  font-family: Typography.$font-family;
+  font-size: Typography.$font-size--3;
+  font-weight: Typography.$font-weight--7;
+  letter-spacing: Typography.$letter-spacing--2;
+  line-height: Typography.$line-height--2;
+  text-transform: initial;
+  text-decoration: none;
+  color: Appbar.$color;
+  border: 0;
+  background: Appbar.$background-color;
+  box-shadow: Appbar.$box-shadow;
+  transition: Animation.default(background-color),
+    Animation.default(border-color),
+    Animation.default(height), Animation.default(color);
+  margin: Appbar.$margin;
+  padding: Appbar.$padding;
+  width: Appbar.$width;
+  height: Appbar.$height;
+  position: relative;
+  z-index: 100;
+  bottom: initial;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  vertical-align: middle;
+  box-sizing: border-box;
+
+  &-content {
+    margin-left: auto;
+    padding: Appbar.$padding;
+    width: max-content;
+    height: Appbar.$height;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+    vertical-align: middle;
+    box-sizing: border-box;
+  }
+
+  &-title {
+    font-family: Appbar.$font-family;
+    font-size: Typography.$font-size--3;
+    font-weight: Typography.$font-weight--8;
+    line-height: Appbar.$line-height;
+    letter-spacing: Typography.$letter-spacing--6;
+    text-decoration: Appbar.$text-decoration;
+    text-transform: Appbar.$text-transform;
+    text-align: Appbar.$text-align;
+    color: Appbar.$color;
+    border: Appbar.$item-border-width;
+    border-radius: Appbar.$item-border-radius;
+    border-color: Appbar.$border-color;
+    background-color: transparent;
+    margin: Appbar.$item-margin;
+    padding: Appbar.$item-padding;
+    width: max-content;
+    min-width: fit-content;
+    height: Appbar.$item-height;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    cursor: pointer;
+  }
+
+  &-item {
+    font-family: Appbar.$font-family;
+    font-size: Typography.$font-size--2;
+    font-weight: Appbar.$font-weight;
+    line-height: Appbar.$line-height;
+    letter-spacing: Appbar.$letter-spacing;
+    text-decoration: Appbar.$text-decoration;
+    text-transform: Appbar.$text-transform;
+    text-align: Appbar.$text-align;
+    color: Appbar.$color;
+    border: Appbar.$item-border-width;
+    border-radius: Appbar.$item-border-radius;
+    border-color: Appbar.$border-color;
+    background-color: Appbar.$item-background-color;
+    transition: Animation.default(background-color),
+      Animation.default(border-color),
+      Animation.default(font-weight), Animation.default(color);
+    margin: Appbar.$item-margin;
+    padding: Appbar.$item-padding;
+    width: max-content;
+    min-width: fit-content;
+    height: Appbar.$item-height;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: Appbar.$text-decoration;
+      border-color: Appbar.$border-color;
+      background-color: darken(Appbar.$background-color, 5%);
+    }
+  }
+
+  &-icon {
+    line-height: Appbar.$line-height;
+    letter-spacing: Appbar.$letter-spacing;
+    text-decoration: Appbar.$text-decoration;
+    text-transform: Appbar.$text-transform;
+    text-align: Appbar.$text-align;
+    color: Appbar.$color;
+    border: 0.25rem solid transparent;
+    border-radius: 999rem;
+    border-color: Appbar.$border-color;
+    background-color: Appbar.$item-background-color;
+    transition: Animation.default(background-color),
+      Animation.default(border-color),
+      Animation.default(font-weight), Animation.default(color);
+    margin: Appbar.$item-margin;
+    padding: 0;
+    width: Appbar.$item-height;
+    height: Appbar.$item-height;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    cursor: pointer;
+
+    &:hover {
+      border-color: Appbar.$border-color;
+      background-color: darken(Appbar.$background-color, 5%);
+    }
+
+    &-image {
+      border: 0;
+      border-radius: 999rem;
+      transition: Animation.default(background-color),
+        Animation.default(border-color),
+        Animation.default(font-weight), Animation.default(color);
+      margin: 0;
+      padding: 0;
+      width: Appbar.$item-height - 0.5rem;
+      height: Appbar.$item-height - 0.5rem;
+    }
+  }
+
+  /*  Primary  */
+  @include Appbar.theme("primary", Color.$theme--color, Color.$theme--text-color);
+  /*  Secondary  */
+  @include Appbar.theme("secondary", Color.$theme--secondary--color, Color.$theme--secondary--text-color);
+  /*  Info  */
+  @include Appbar.theme("info", Color.$theme--info--color, Color.$theme--info--text-color);
+  /*  Success  */
+  @include Appbar.theme("success", Color.$theme--success--color, Color.$theme--success--text-color);
+  /*  Warning  */
+  @include Appbar.theme("warning", Color.$theme--warning--color, Color.$theme--warning--text-color);
+  /*  Error  */
+  @include Appbar.theme("error", Color.$theme--error--color, Color.$theme--error--text-color);
+
+  @include Layout.breakpoint("sm", max) {
+    &-item {
+      display: none;
+    }
+  }
+}

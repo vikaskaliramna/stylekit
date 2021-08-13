@@ -1,0 +1,55 @@
+$colors: ();
+$scheme: default;
+
+$schemes: map-get((default: (pale-silver: #777777,
+            blue-ncs: #0084b4,
+            mint-cream: #f5f8fa,
+            platinum: #e7e7e7,
+            cadet-grey: #93a3b5,
+        ),
+        escala: (pale-silver: #777777,
+            blue-ncs: #0084b4,
+            mint-cream: #f5f8fa,
+            platinum: #e7e7e7,
+            cadet-grey: #93a3b5,
+        ),
+        primavera: (jet: #333333,
+            wintergreen-dream: #588c73,
+            eton-blue: #8fc0a9,
+            sunglow: #ffc33c,
+            light-khaki: #f2e394,
+            bege: #faf3dd,
+        ),
+    ),
+    $scheme);
+
+@function sub-palette($color, $percentage, $opacity) {
+    $map: (base: $color,
+            light: lighten($color, $percentage),
+            dark: darken($color, $percentage),
+            transparent: transparentize($color, $opacity),
+        );
+
+    @return $map;
+}
+
+@function append($map, $key, $value) {
+    @return map-merge($map,
+        ($key: $value,
+        ));
+}
+
+@function color($color) {
+    @return map-get(map-get($colors, $color), base);
+}
+
+@function color-variant($color, $tone) {
+    @return map-get(map-get($colors, $color), $tone);
+}
+
+@each $key,
+$value in $schemes {
+    $tmp: ();
+    $tmp: append($tmp, $key, sub-palette($value, 50%, 0.5));
+    $colors: map-merge($colors, $tmp);
+}

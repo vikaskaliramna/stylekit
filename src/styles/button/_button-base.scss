@@ -1,0 +1,113 @@
+@use '../typography'as Typography;
+@use '../elevation'as Elevation;
+@use '../animation'as Animation;
+@use '../layout'as Layout;
+@use '../color'as Color;
+@use './'as Button;
+
+.button {
+  /*!  Typography  */
+  font-family: Button.$font-family;
+  font-size: Button.$font-size;
+  font-weight: Button.$font-weight;
+  line-height: Button.$line-height;
+  letter-spacing: Button.$letter-spacing;
+  text-decoration: Button.$text-decoration;
+  text-transform: Button.$text-transform;
+  text-align: Button.$text-align;
+  /*!  Decoration  */
+  color: Button.$color;
+  border-width: Button.$border-width;
+  border-style: Button.$border-style;
+  border-radius: Button.$border-radius;
+  border-color: Button.$border-color;
+  background-color: Button.$background-color;
+  background-clip: padding-box;
+  /*!  Solveds border appearing darker than background on text button */
+  /*!  Solved : https://stackoverflow.com/questions/35148726/border-and-background-show-up-as-different-colors-even-when-color-values-are-sam  */
+  box-shadow: none;
+  /*!  Animations & Transitions  */
+  transition: Animation.default(box-shadow), Animation.default(background-color), Animation.default(transform), Animation.default(border-color), Animation.default(color);
+  /*!  Spacing  */
+  margin: Button.$margin;
+  padding: Button.$padding;
+  /*!  Sizing  */
+  height: Button.$height;
+  min-width: Button.$min-width;
+  max-width: Button.$max-width;
+  /*!  Positioning  */
+  position: relative;
+  /*!  Flexbox  */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  /*!  Others  */
+  overflow: hidden;
+  user-select: none;
+  will-change: box-shadow;
+  outline: none;
+  cursor: pointer;
+
+  &:hover {
+    /*!  Typography  */
+    text-decoration: Button.$text-decoration;
+    /*!  Decoration  */
+    border-color: Button.$border-color;
+    background-color: darken(Button.$background-color, 5%);
+  }
+
+  &:focus {
+    /*!  Decoration  */
+    outline: none;
+  }
+
+  /*!  Icon  */
+  &--icon {
+    /*!  Decoration  */
+    border-radius: 999rem;
+    /*!  Spacing  */
+    padding: 0;
+    /*!  Sizing  */
+    width: Button.$height;
+    height: Button.$height;
+    min-width: Button.$height;
+
+    & .button__icon {
+      /*!  Typography  */
+      font-size: Typography.$font-size--5;
+      line-height: Typography.$line-height--0;
+      letter-spacing: Typography.$letter-spacing--0;
+    }
+  }
+
+  /*!  Utilities  */
+  &--rounded {
+    /*!  Decoration  */
+    border-radius: 999rem;
+  }
+
+  &--squared {
+    /*!  Decoration  */
+    border-radius: 0;
+  }
+
+  @include Layout.breakpoint("sm", max) {
+    font-size: Typography.$font-size--1;
+    padding: 0.5rem;
+    height: 2rem;
+  }
+}
+
+/*!  Primary  */
+@include Button.theme("primary", Color.$theme--color, Color.$theme--text-color);
+/*!  Secondary  */
+@include Button.theme("secondary", Color.$theme--secondary--color, Color.$theme--secondary--text-color);
+/*!  Info  */
+@include Button.theme("info", Color.$theme--info--color, Color.$theme--info--text-color);
+/*!  Success  */
+@include Button.theme("success", Color.$theme--success--color, Color.$theme--success--text-color);
+/*!  Warning  */
+@include Button.theme("warning", Color.$theme--warning--color, Color.$theme--warning--text-color);
+/*!  Error  */
+@include Button.theme("error", Color.$theme--error--color, Color.$theme--error--text-color);

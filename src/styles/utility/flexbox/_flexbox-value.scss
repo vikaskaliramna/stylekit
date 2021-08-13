@@ -1,0 +1,15 @@
+// Display
+// none | flex | block | inline | inline-flex | inline-block
+$display: (none, flex, grid, block, inline, inline-flex, inline-grid, inline-block);
+
+// Align Items
+// flex-start | flex-end | center | baseline | stretch
+$align-items: (flex-start, flex-end, center, baseline, stretch);
+
+// Align Self
+// auto | flex-start | flex-end | center | baseline | stretch
+$align-self: (auto, flex-start, flex-end, center, baseline, stretch);
+
+// Justify Content
+// flex-start | flex-end | center | space-between | space-around | space-evenly
+$justify-content: (auto, flex-start, flex-end, center, space-between, space-around, space-evenly);

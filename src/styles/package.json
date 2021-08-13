@@ -1,0 +1,8 @@
+{
+  "name": "stylekit",
+  "version": "1.0.0",
+  "main": "backdrop.scss",
+  "author": "Vikas Kaliramna",
+  "license": "MIT",
+  "private": false
+}

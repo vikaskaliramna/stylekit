@@ -1,0 +1,15 @@
+@use './layout-variables'as Layout;
+
+@mixin breakpoint($breakpoint, $query: min) {
+  @if map-has-key(Layout.$breakpoints, $breakpoint) {
+    @if map-get(Layout.$breakpoints, $breakpoint)==0px {
+      @content;
+    }
+
+    @else {
+      @media (#{$query}-width: map-get(Layout.$breakpoints, $breakpoint)) {
+        @content;
+      }
+    }
+  }
+}

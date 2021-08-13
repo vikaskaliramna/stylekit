@@ -1,0 +1,19 @@
+@use './color-variables'as Color;
+
+@mixin theme($class, $color, $text-color) {
+  .text--#{$class} {
+    color: $color;
+  }
+
+  .border--#{$class} {
+    border-color: $color;
+  }
+
+  .background--#{$class} {
+    background-color: $color;
+
+    &--text {
+      color: $text-color;
+    }
+  }
+}

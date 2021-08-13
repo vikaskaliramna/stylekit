@@ -1,0 +1,142 @@
+@use './'as Layout;
+@use 'sass:math';
+
+:root {
+  --layout-breakpoint--sm: #{map-get(Layout.$breakpoints, "sm")};
+  --layout-breakpoint--md: #{map-get(Layout.$breakpoints, "md")};
+  --layout-breakpoint--lg: #{map-get(Layout.$breakpoints, "lg")};
+  --layout-breakpoint--xl: #{map-get(Layout.$breakpoints, "xl")};
+}
+
+.layout {
+  padding: 2.5rem 2rem;
+  width: 100%;
+  max-width: 100%;
+  display: block;
+
+  @include Layout.breakpoint("md", max) {
+    padding: 2.5rem 1rem;
+  }
+
+  @include Layout.breakpoint("sm", max) {
+    padding: 2.5rem 0;
+  }
+
+  &--result {
+    & .layout__pannel-default {
+      width: 100%;
+      max-width: 750px;
+    }
+  }
+}
+
+.spaced {
+  margin: 0.125rem;
+}
+
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 100%;
+  display: block;
+  box-sizing: border-box;
+
+  // @include Layout.breakpoint("sm") {
+  //   padding: 0.5rem;
+  //   max-width: 100%;
+  // }
+
+  // @include Layout.breakpoint("sm", max) {
+  //   padding: 0.25rem;
+  //   max-width: 100%;
+  // }
+
+
+  // @include Layout.breakpoint("md") {
+  //   padding: 1rem;
+  //   max-width: 600px;
+  // }
+
+  // @include Layout.breakpoint("lg") {
+  //   padding: 1.5rem;
+  //   max-width: 600px;
+  // }
+
+  // @include Layout.breakpoint("xl") {
+  //   padding: 2.5rem;
+  //   max-width: 700px;
+  // }
+}
+
+.row {
+  margin: 0;
+  padding: 0 0.5rem;
+  min-width: 100%;
+  max-width: 100%;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  box-sizing: border-box;
+
+  @include Layout.breakpoint("sm", max) {
+    padding: 0.25rem;
+  }
+}
+
+.col {
+  margin: 0;
+  padding: 1rem;
+  width: auto;
+  box-sizing: border-box;
+
+  @include Layout.breakpoint("md", max) {
+    padding: 0.5rem;
+  }
+
+  @include Layout.breakpoint("sm", max) {
+    padding: 0.25rem;
+  }
+
+  &.col {
+    @include Layout.breakpoint(default) {
+      @for $each from 0 through Layout.$cells {
+        &--#{$each} {
+          width: math.div(100%, Layout.$cells--4) * $each;
+        }
+      }
+
+      @include Layout.breakpoint("sm") {
+        @for $each from 0 through Layout.$cells {
+          &-sm--#{$each} {
+            width: math.div(100%, Layout.$cells--4) * $each;
+          }
+        }
+      }
+
+      @include Layout.breakpoint("md") {
+        @for $each from 0 through Layout.$cells {
+          &-md--#{$each} {
+            width: math.div(100%, Layout.$cells--4) * $each;
+          }
+        }
+      }
+
+      @include Layout.breakpoint("lg") {
+        @for $each from 0 through Layout.$cells {
+          &-lg--#{$each} {
+            width: math.div(100%, Layout.$cells--4) * $each;
+          }
+        }
+      }
+
+      @include Layout.breakpoint("xl") {
+        @for $each from 0 through Layout.$cells {
+          &-xl--#{$each} {
+            width: math.div(100%, Layout.$cells--4) * $each;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+// Font Family
+$font-family: #{'ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"'};
+$font-family--Serif: #{'font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;'};
+$font-family--Roboto: #{"Roboto", sans-serif};
+$font-family--Sans-serif: #{sans-serif};
+
+// Spacing
+$margin: 1rem 0;
+
+// Font Sizes
+$font-size--0: 0rem !default;
+$font-size--1: 0.75rem !default;
+$font-size--2: 0.875rem !default;
+$font-size--3: 1rem !default;
+$font-size--4: 1.125rem !default;
+$font-size--5: 1.25rem !default;
+// Font Sizes Large
+$font-size--large--0: 1.5rem !default;
+$font-size--large--1: 2rem !default;
+$font-size--large--2: 2.5rem !default;
+$font-size--large--3: 3rem !default;
+$font-size--large--4: 3.5rem !default;
+$font-size--large--5: 4rem !default;
+// Font Sizes Extra Large
+$font-size--xlarge--0: 4.5rem !default;
+$font-size--xlarge--1: 5rem !default;
+$font-size--xlarge--2: 6.5rem !default;
+$font-size--xlarge--3: 7rem !default;
+$font-size--xlarge--4: 7.5rem !default;
+$font-size--xlarge--5: 8rem !default;
+
+// Font Weights
+$font-weight--0: 000 !default;
+$font-weight--1: 100 !default;
+$font-weight--2: 200 !default;
+$font-weight--3: 300 !default;
+$font-weight--4: 400 !default;
+$font-weight--5: 500 !default;
+$font-weight--6: 600 !default;
+$font-weight--7: 700 !default;
+$font-weight--8: 800 !default;
+$font-weight--9: 900 !default;
+
+// Line Height
+$line-height--0: 0 !default;
+$line-height--1: 1 !default;
+$line-height--2: 1.125 !default;
+$line-height--3: 1.25 !default;
+$line-height--4: 1.375 !default;
+$line-height--5: 1.5 !default;
+$line-height--6: 1.625 !default;
+$line-height--7: 1.75 !default;
+$line-height--8: 1.875 !default;
+$line-height--9: 2 !default;
+
+// Letter Spacing
+$letter-spacing--0: 0rem !default;
+$letter-spacing--1: 0.0125rem !default;
+$letter-spacing--2: 0.025rem !default;
+$letter-spacing--3: 0.0375rem !default;
+$letter-spacing--4: 0.05rem !default;
+$letter-spacing--5: 0.0625rem !default;
+$letter-spacing--6: 0.075rem !default;
+$letter-spacing--7: 0.0875rem !default;
+$letter-spacing--8: 0.1rem !default;
+$letter-spacing--9: 0.1125rem !default;
+
+// Letter Spacing
+$word-spacing--0: 0rem !default;
+$word-spacing--1: 0.0125rem !default;
+$word-spacing--2: 0.025rem !default;
+$word-spacing--3: 0.0375rem !default;
+$word-spacing--4: 0.05rem !default;
+$word-spacing--5: 0.0625rem !default;
+$word-spacing--6: 0.075rem !default;
+$word-spacing--7: 0.0875rem !default;
+$word-spacing--8: 0.1rem !default;
+$word-spacing--9: 0.1125rem !default;

@@ -1,0 +1,47 @@
+@use '../typography'as Typography;
+@use '../elevation'as Elevation;
+@use '../animation'as Animation;
+@use '../color'as Color;
+
+$font-family: Typography.$font-family;
+$font-size: Typography.$font-size--2;
+$font-weight: Typography.$font-weight--4;
+$line-height: Typography.$line-height--1;
+$letter-spacing: Typography.$letter-spacing--5;
+$margin: Typography.$font-size--2 0;
+$text-transform: initial;
+$text-decoration: none;
+$white-space: normal;
+$text-align: left;
+
+$border-width: 0;
+$border-radius: 0;
+$border-style: solid;
+$border-color: transparent;
+$color: #4b5563;
+$background-color: #ffffff;
+$box-shadow: rgb(50 50 93 / 25%) 0px 6px 12px -2px,
+  rgb(0 0 0 / 30%) 0px 3px 7px -3px;
+// $elevation-raised:-4px 4px 0 0 #161b28;
+
+$margin: 0;
+$padding: 1rem;
+$height: 2.25rem;
+$min-width: 4.75rem;
+$max-width: max-content;
+
+// List Item
+
+$item-border-width: 0;
+$item-border-radius: 0;
+$item-border-style: solid;
+$item-border-color: transparent;
+$item-color: #4b5563;
+$item-background-color: #f3f4f6;
+// $elevation-raised:-4px 4px 0 0 #161b28;
+
+$item-margin: 0;
+$item-padding: 0 1rem;
+$item-height: 2.25rem;
+$item-min-width: 4.75rem;
+$item-max-width: max-content;

@@ -1,0 +1,21 @@
+@use './animation-variables'as Animation;
+
+@function fast-out-slow-in($property, $duration: 0.25s, $delay: 0s) {
+  @return $property $duration Animation.$curve-fast-out-slow-in $delay;
+}
+
+@function linear-out-slow-in($property, $duration: 0.25s, $delay: 0s) {
+  @return $property $duration Animation.$curve-linear-out-slow-in $delay;
+}
+
+@function fast-out-linear-in($property, $duration: 0.25s, $delay: 0s) {
+  @return $property $duration Animation.$curve-fast-out-linear-in $delay;
+}
+
+@function sharp($property, $duration: 0.25s, $delay: 0s) {
+  @return $property $duration Animation.$curve-sharp $delay;
+}
+
+@function default($property, $duration: 0.25s, $delay: 0s) {
+  @return $property $duration Animation.$curve-default $delay;
+}

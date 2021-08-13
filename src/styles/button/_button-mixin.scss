@@ -1,0 +1,80 @@
+@use './button-variables'as Button;
+
+@mixin theme($class, $color, $text-color) {
+  .button--#{$class} {
+    /*!  Decoration  */
+    color: $text-color;
+    border-color: $color;
+    background-color: $color;
+    box-shadow: Button.$box-shadow;
+
+    &:hover {
+      /*!  Decoration  */
+      color: $text-color;
+      border-color: darken($color, 5%);
+      background-color: darken($color, 5%);
+      box-shadow: Button.$box-shadow;
+    }
+  }
+
+  .button--text-#{$class} {
+    /*!  Decoration  */
+    color: $color;
+    border-color: transparentize($color, 0.85);
+    background-color: transparentize($color, 0.85);
+    box-shadow: none;
+
+    &:hover {
+      /*!  Decoration  */
+      color: $color;
+      border-color: transparentize(darken($color, 25%), 0.85);
+      background-color: transparentize(darken($color, 25%), 0.85);
+    }
+  }
+
+  .button--outlined-#{$class} {
+    /*!  Decoration  */
+    color: $color;
+    border-color: $color;
+    background-color: transparentize($color, 0.9);
+    box-shadow: none;
+
+    &:hover {
+      /*!  Decoration  */
+      color: $color;
+      border-color: darken($color, 5%);
+      background-color: transparentize(darken($color, 25%), 0.9);
+    }
+  }
+
+  .button--filled-#{$class} {
+    /*!  Decoration  */
+    color: $text-color;
+    border-color: $color;
+    background-color: $color;
+    box-shadow: none;
+
+    &:hover {
+      /*!  Decoration  */
+      color: $text-color;
+      border-color: darken($color, 5%);
+      background-color: darken($color, 5%);
+    }
+  }
+
+  /*!  Still needs improvement  */
+  .button--#{$class}__beta {
+    /*!  Decoration  */
+    color: $text-color;
+    border-color: $color;
+    background-color: $color;
+    box-shadow: 0;
+
+    &:hover {
+      /*!  Decoration  */
+      /*! box-shadow: (Add box shadow)  */
+      /*!  Transform  */
+      transform: translate(2px, -2px);
+    }
+  }
+}

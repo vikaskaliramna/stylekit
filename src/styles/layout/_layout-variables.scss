@@ -1,0 +1,38 @@
+// Breakpoint Bontainer
+$box-width--0: 95% !default;
+$box-width--1: 95% !default;
+$box-width--2: 85% !default;
+$box-width--3: 80% !default;
+$box-width--4: 75% !default;
+
+// Breakpoint Cells
+$cells: 12 !default;
+$cells--1: 06 !default; // Number of Cells on differnt breakpoints. (Not used)
+$cells--2: 08 !default; // Number of Cells on differnt breakpoints. (Not used)
+$cells--3: 10 !default; // Number of Cells on differnt breakpoints. (Not used)
+$cells--4: 12 !default; // Number of Cells on differnt breakpoints. (Not used)
+
+// Layout Breakpoints
+
+// Layout Breakpoint Classes
+$breakpoint--0--class: "default" !default;
+$breakpoint--1--class: "sm" !default;
+$breakpoint--2--class: "md" !default;
+$breakpoint--3--class: "lg" !default;
+$breakpoint--4--class: "xl" !default;
+
+// Layout Breakpoint Values
+$breakpoint--0--value: 0000px !default;
+$breakpoint--1--value: 0375px !default;
+$breakpoint--2--value: 0768px !default;
+$breakpoint--3--value: 0960px !default;
+$breakpoint--4--value: 1024px !default;
+
+// Layout Breakpoint Variable Map
+$breakpoints: (
+  $breakpoint--0--class: $breakpoint--0--value,
+  $breakpoint--1--class: $breakpoint--1--value,
+  $breakpoint--2--class: $breakpoint--2--value,
+  $breakpoint--3--class: $breakpoint--3--value,
+  $breakpoint--4--class: $breakpoint--4--value,
+) !default;

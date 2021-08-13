@@ -1,0 +1,86 @@
+.dropdown-content {
+  // @include typography-mixin__body-1;
+  text-decoration: none;
+  text-align: left;
+  border-width: $dropdown-content__border-width;
+  border-style: $dropdown-content__border-style;
+  border-radius: $dropdown-content__border-radius;
+  color: $dropdown-content__color;
+  border-color: $dropdown-content__border-color;
+  background-color: $color__background-color;
+  box-shadow: $elevation__3;
+  padding: $dropdown-content__padding-y $dropdown-content__padding-x;
+  padding: $dropdown-content__margin-y $dropdown-content__margin-x;
+  height: $dropdown-content__height;
+  min-height: $dropdown-content__height;
+  max-height: $dropdown-content__height;
+  width: $dropdown-content__width;
+  min-width: $dropdown-content__min-width;
+  max-width: $dropdown-content__max-width;
+  position: absolute;
+  display: $dropdown-content__display;
+  align-items: $dropdown-content__align-items;
+  justify-content: $dropdown-content__justify-content;
+  vertical-align: middle;
+  clear: both;
+  position: relative;
+  box-sizing: border-box;
+
+  & {
+    overflow-y: auto;
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 9999; // TODO: Check if this doesn't break other things
+    transform-origin: 0 0;
+  }
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+.dropdown-item {
+  // @include typography-mixin__body-1;
+  text-decoration: none;
+  text-align: left;
+  // @include typography-mixin__body-1;
+  border-width: $dropdown-item__border-width;
+  border-style: $dropdown-item__border-style;
+  border-radius: $dropdown-item__border-radius;
+  padding: $dropdown-item__padding-y $dropdown-item__padding-x;
+  height: $dropdown-item__height;
+  width: $dropdown-item__width;
+  display: $dropdown-item__display;
+  align-items: $dropdown-item__align-items;
+  justify-content: $dropdown-item__justify-content;
+  vertical-align: middle;
+  clear: both;
+  position: relative;
+  box-sizing: border-box;
+
+  & {
+    outline: none;
+    cursor: pointer;
+    overflow: hidden;
+    user-select: none;
+    -webkit-appearance: none;
+  }
+
+  &:not(:disabled) {
+    color: $dropdown-item__color;
+    border-color: $dropdown-item__border-color;
+    background-color: $dropdown-item__background-color;
+  }
+
+  &-divider {
+    color: transparent;
+    background-color: transparent;
+    border-bottom: 1px solid #dddddd;
+    margin: 0;
+    height: 0;
+    width: 100%;
+    display: block;
+  }
+}

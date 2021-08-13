@@ -1,0 +1,83 @@
+.ripple {
+  transition: animation__function-default(all, 0.25s);
+  position: relative;
+  z-index: 1;
+  vertical-align: middle;
+  cursor: pointer;
+  overflow: hidden;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+
+  .waves-ripple {
+    opacity: 0;
+    border-radius: 9999rem;
+    background: rgba(0, 0, 0, 0.275);
+    transition: animation__function-default(all, 0.25s);
+    width: 20px;
+    height: 20px;
+    margin-top: -10px;
+    margin-left: -10px;
+    transform: scale(0);
+    position: absolute;
+    pointer-events: none;
+  }
+
+  &-light .waves-ripple {
+    background: rgba(225, 225, 225, 0.275);
+  }
+
+  // Style input button bug.
+  input[type="button"],
+  input[type="reset"],
+  input[type="submit"] {
+    font-size: inherit;
+    font-style: normal;
+    text-transform: inherit;
+    border: 0;
+    background: none;
+  }
+
+  img {
+    position: relative;
+    z-index: -1;
+  }
+}
+
+.waves-notransition {
+  transition: none !important;
+}
+
+.waves-circle {
+  transform: translateZ(0);
+  -webkit-mask-image: -webkit-radial-gradient(circle, white 100%, black 100%);
+}
+
+.waves-input-wrapper {
+  border-radius: 0.2em;
+  vertical-align: bottom;
+
+  .waves-button-input {
+    position: relative;
+    z-index: 1;
+    top: 0;
+    left: 0;
+  }
+}
+
+.waves-circle {
+  text-align: center;
+  line-height: 2.5em;
+  border-radius: 50%;
+  width: 2.5em;
+  height: 2.5em;
+  -webkit-mask-image: none;
+}
+
+.waves-block {
+  display: block;
+}
+
+/* Firefox Bug: link not triggered */
+.waves-effect .waves-ripple {
+  z-index: -1;
+}

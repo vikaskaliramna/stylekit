@@ -1,0 +1,45 @@
+// modal
+$modal__font-family: unquote("'Roboto',sans-serif") !default;
+$modal__font-size: 0.875rem !default;
+$modal__line-height: 2.25rem !default;
+$modal__font-weight: 500 !default;
+$modal__letter-spacing: 0.025rem !default;
+$modal__text-decoration: none !default;
+$modal__text-transformation: uppercase !default;
+
+$modal__color: rgba(0, 0, 0, 0.75) !default;
+$modal__border-radius: 0.25rem !default;
+$modal__background-color: $color__background-color !default;
+
+$modal__padding: 0rem !default;
+$modal__height: inherit !default;
+$modal__min-width: inherit !default;
+
+// modal Outlined
+$modal__outlined-border-width: 0.0625rem !default;
+$modal__outlined-border-style: solid !default;
+$modal__outlined-border-color: #e0e0e0 !default;
+
+// modal__content
+$modal__content-padding: 1rem 1.75rem !default;
+
+// modal title
+$modal__title-color: #212121 !default;
+$modal__title-font-size: 1.25rem !default;
+$modal__title-font-weight: 400 !default;
+$modal__title-line-height: 1.25 !default;
+$modal__title-letter-spacing: 0.0175em !default;
+
+// modal subtitle
+$modal__subtitle-color: #0000008a !default;
+$modal__subtitle-font-size: 0.875rem !default;
+$modal__subtitle-font-weight: 400 !default;
+$modal__subtitle-line-height: 1.275 !default;
+$modal__subtitle-letter-spacing: 0.05em !default;
+
+// modal text
+$modal__text-color: rgba(0, 0, 0, 0.75) !default;
+$modal__text-font-size: 0.875rem !default;
+$modal__text-font-weight: 400 !default;
+$modal__text-line-height: 1.25 !default;
+$modal__text-letter-spacing: 0.0175em !default;

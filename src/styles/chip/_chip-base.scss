@@ -1,0 +1,66 @@
+@use '../typography'as Typography;
+@use '../elevation'as Elevation;
+@use '../animation'as Animation;
+@use '../layout'as Layout;
+@use '../color'as Color;
+@use './'as Chip;
+
+.chip {
+  /*!  Typography  */
+  font-family: Chip.$font-family;
+  font-size: Chip.$font-size;
+  font-weight: Chip.$font-weight;
+  line-height: Chip.$line-height;
+  letter-spacing: Chip.$letter-spacing;
+  text-decoration: Chip.$text-decoration;
+  text-transform: Chip.$text-transform;
+  text-align: Chip.$text-align;
+  /*!  Decoration  */
+  color: Chip.$color;
+  border-width: Chip.$border-width;
+  border-style: Chip.$border-style;
+  border-radius: Chip.$border-radius;
+  border-color: Chip.$border-color;
+  background-color: Chip.$background-color;
+  background-clip: padding-box;
+  /*!  Solved : https://stackoverflow.com/questions/35148726/border-and-background-show-up-as-different-colors-even-when-color-values-are-sam  */
+  box-shadow: none;
+  /*!  Animations & Transitions  */
+  transition: Animation.default(box-shadow), Animation.default(background-color), Animation.default(transform), Animation.default(border-color), Animation.default(color);
+  /*!  Spacing  */
+  margin: Chip.$margin;
+  padding: Chip.$padding;
+  /*!  Sizing  */
+  height: Chip.$height;
+  min-width: Chip.$min-width;
+  max-width: Chip.$max-width;
+  /*!  Positioning  */
+  position: relative;
+  /*!  Flexbox  */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  /*!  Others  */
+  overflow: hidden;
+  user-select: none;
+  will-change: box-shadow;
+  outline: none;
+  cursor: pointer;
+
+  &:hover {
+    border-color: Chip.$border-color;
+    background-color: Chip.$border-color;
+  }
+
+  &-icon {
+    border-radius: 999rem;
+    height: Chip.$height;
+    min-width: Chip.$height;
+    max-width: Chip.$height;
+
+    & .material-icons {
+      font-size: 1.25rem;
+    }
+  }
+}

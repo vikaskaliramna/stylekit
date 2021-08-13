@@ -1,0 +1,86 @@
+@use '../typography'as Typography;
+@use '../elevation'as Elevation;
+@use '../animation'as Animation;
+@use '../color'as Color;
+@use '../button'as Button;
+
+.tab {
+  &-header {
+    padding: 0 1rem;
+    height: 2.75rem;
+    /* Auto Layout */
+
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+
+    // position: absolute;
+    // left: 11.18%;
+    // right: 12.87%;
+    // top: 19.81%;
+    // bottom: 76.34%;
+
+    /* 01. Primary/500 */
+
+    // background: #6200EE;
+    /* 03 dp */
+
+    // box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.14), 0px 3px 3px rgba(0, 0, 0, 0.12), 0px 1px 8px rgba(0, 0, 0, 0.2);
+
+    &-button {
+      // @include typography-mixin__button;
+      text-align: Button.$text-align;
+      text-decoration: Button.$text-decoration;
+      text-transform: Button.$text-transform;
+      border-width: 0;
+      border-bottom-width: 0.1rem;
+      border-style: Button.$border-style;
+      border-color: transparent;
+      border-radius: 0;
+      color: Button.$color;
+      background-color: Button.$background-color;
+      box-shadow: none;
+      margin: Button.$margin;
+      padding: Button.$padding;
+      height: 2.75rem;
+      min-width: Button.$min-width;
+      max-width: max-content;
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      vertical-align: middle;
+
+      overflow: hidden;
+      will-change: box-shadow;
+      transition: animation__include-exit-permanent(box-shadow, 0.25s),
+        animation__include-exit-permanent(background-color, 0.25s),
+        animation__include-exit-permanent(color, 0.25s);
+      outline: none;
+      cursor: pointer;
+
+      &--active,
+      &:focus {
+        border-color: Color.$theme--warning--color;
+      }
+    }
+  }
+
+  &-content {
+    width: 100%;
+    display: block;
+    padding: 1rem;
+  }
+}
+
+.indicator {
+  position: relative;
+  left: 0%;
+  right: 0%;
+  top: 97.5%;
+  bottom: 0%;
+
+  /* 01. Primary/500 */
+
+  background: #6200ee;
+}

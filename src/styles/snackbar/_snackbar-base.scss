@@ -1,0 +1,55 @@
+.snackbar {
+  background-color: #212121;
+  padding: 0 $snackbar__use-height/4;
+  height: $snackbar__use-height;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translate(0, 3rem);
+  transition: animation__function-sharp(transform, 0.5s);
+  pointer-events: none;
+
+  @media (min-width:#{$layout__breakpoint-small}) {
+    width: 20rem;
+    left: calc(50% - #{20rem / 2});
+    right: auto;
+  }
+
+  &--active {
+    transform: translate(0, 0);
+    pointer-events: auto;
+  }
+
+  &-text {
+    @include typography__mixin-body-2;
+    padding: 0 0.75rem;
+    height: $snackbar__use-height;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    vertical-align: middle;
+    color: #ffffff;
+    float: left;
+  }
+
+  &-action {
+    @include typography__mixin-button;
+    border: 0;
+    outline: 0;
+    color: $color__use-secondary;
+    background-color: transparent;
+    padding: 0 0.75rem;
+    height: $snackbar__use-height;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    vertical-align: middle;
+    float: right;
+  }
+}

@@ -1,0 +1,112 @@
+// Constants
+$content--white: #ffffff !default;
+$content--black: #000000 !default;
+
+/*
+*   Light mode
+*/
+// Text Color
+$light-mode-text-color: #242731;
+$light-mode-text-color--1: darken($light-mode-text-color, 05%);
+$light-mode-text-color--2: darken($light-mode-text-color, 10%);
+$light-mode-text-color--3: darken($light-mode-text-color, 20%);
+$light-mode-text-color--4: darken($light-mode-text-color, 30%);
+// Border Color
+$light-mode-border-color: #cdcdcd;
+$light-mode-border-color--1: lighten($light-mode-border-color, 05%);
+$light-mode-border-color--2: lighten($light-mode-border-color, 10%);
+$light-mode-border-color--3: lighten($light-mode-border-color, 20%);
+$light-mode-border-color--4: lighten($light-mode-border-color, 30%);
+// Background Color
+$light-mode-background-color: #ffffff;
+$light-mode-background-color--1: lighten($light-mode-background-color, 05%);
+$light-mode-background-color--2: lighten($light-mode-background-color, 10%);
+$light-mode-background-color--3: lighten($light-mode-background-color, 20%);
+$light-mode-background-color--4: lighten($light-mode-background-color, 30%);
+
+
+/*
+*   Dark mode
+*/
+// Text Color
+$text-color: #ffffff;
+$text-color--1: darken($text-color, 05%);
+$text-color--2: darken($text-color, 10%);
+$text-color--3: darken($text-color, 20%);
+$text-color--4: darken($text-color, 30%);
+
+// Border Color
+$border-color: #2f3340;
+$border-color--1: lighten($border-color, 05%);
+$border-color--2: lighten($border-color, 10%);
+$border-color--3: lighten($border-color, 20%);
+$border-color--4: lighten($border-color, 30%);
+
+// Background Color
+$background-color: #242731;
+$background-color--1: lighten($background-color, 05%);
+$background-color--2: lighten($background-color, 10%);
+$background-color--3: lighten($background-color, 20%);
+$background-color--4: lighten($background-color, 30%);
+
+
+// Theme Colors
+$theme--color: #4f46e5 !default;
+$theme--text-color: #ffffff !default; // For High Emphasis
+
+// Theme Secondary Color
+$theme--secondary--color: #7c3aed !default;
+$theme--secondary--text-color: #ffffff !default; // For High Emphasis
+
+// Theme Success Color
+$theme--success--color: #10b981 !default;
+$theme--success--text-color: #ffffff !default; // For High Emphasis
+
+// Theme Info Color
+$theme--info--color: #d81b60 !default;
+$theme--info--text-color: #ffffff !default; // For High Emphasis
+
+// Theme Info Color
+$theme--warning--color: #fbbf24 !default;
+$theme--warning--text-color: #4e342e !default; // For High Emphasis
+
+// Theme Error Color
+$theme--error--color: #ef4444 !default;
+$theme--error--text-color: #ffffff !default; // For High Emphasis
+
+// Only for Light and dark mode, do not use with elements and componenets
+// Theme Light Color
+
+$theme--light--color: #f3f4f6 !default;
+$theme--light--text-color: #1f2937 !default; // For High Emphasis
+
+// Theme Dark Color
+$theme--dark--color: #1f2937 !default;
+$theme--dark--text-color: #ffffff !default; // For High Emphasis
+
+// Surface Color
+$theme--surface-color: #ffffff;
+$theme--surface-color--1: #000000de; // For High Emphasis
+$theme--surface-color--2: #00000099; // For Medium Emphasis
+$theme--surface-color--3: #00000061; // For Disabled Elements
+
+// Primary Overlay
+$theme--primary-overlay--1: rgba(98, 0, 238, 0.04); // Hover
+$theme--primary-overlay--2: rgba(98, 0, 238, 0.12); // Focused
+$theme--primary-overlay--3: rgba(98, 0, 238, 0.1); // Pressed
+$theme--primary-overlay--4: rgba(98, 0, 238, 0.08); // Dragged
+$theme--primary-overlay--5: rgba(98, 0, 238, 0.08); // Selected
+
+// Light Overlay
+$theme--light-overlay--1: rgba(255, 255, 255, 0.04); // Hover
+$theme--light-overlay--2: rgba(255, 255, 255, 0.12); // Focused
+$theme--light-overlay--3: rgba(255, 255, 255, 0.1); // Pressed
+$theme--light-overlay--4: rgba(255, 255, 255, 0.08); // Dragged
+$theme--light-overlay--5: rgba(255, 255, 255, 0.08); // Selected
+
+// Dark Overlay
+$theme--overlay-dark--1: rgba(0, 0, 0, 0.04); // Hover
+$theme--overlay-dark--2: rgba(0, 0, 0, 0.12); // Focused
+$theme--overlay-dark--3: rgba(0, 0, 0, 0.1); // Pressed
+$theme--overlay-dark--4: rgba(0, 0, 0, 0.08); // Dragged
+$theme--overlay-dark--5: rgba(0, 0, 0, 0.08); // Selected

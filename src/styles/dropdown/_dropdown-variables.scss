@@ -1,0 +1,39 @@
+// Default dropdown variables
+// Decoration
+$dropdown-content__color: $color__text-color !default;
+$dropdown-content__outline: none !default;
+$dropdown-content__border-style: solid !default;
+$dropdown-content__border-width: 0 !default;
+$dropdown-content__border-radius: 0.25rem !default;
+$dropdown-content__border-color: transparent !default;
+$dropdown-content__background-color: $color__background-color !default;
+// dropdown Layout
+$dropdown-content__padding-y: 0rem !default;
+$dropdown-content__padding-x: 0rem !default;
+$dropdown-content__margin-y: 0 !default;
+$dropdown-content__margin-x: 0 !default;
+$dropdown-content__height: max-content !default;
+$dropdown-content__width: max-content !default;
+$dropdown-content__min-width: 7rem !default;
+$dropdown-content__max-width: max-content !default;
+$dropdown-content__display: none !default;
+$dropdown-content__align-items: initial !default;
+$dropdown-content__justify-content: initial !default;
+
+$dropdown-item__color: $color__text-color !default;
+$dropdown-item__outline: none !default;
+$dropdown-item__border-style: solid !default;
+$dropdown-item__border-width: 0 !default;
+$dropdown-item__border-radius: 0 !default;
+$dropdown-item__border-color: transparent !default;
+$dropdown-item__background-color: $color__background-color !default;
+// dropdown Layout
+$dropdown-item__padding-y: 0rem !default;
+$dropdown-item__padding-x: 1rem !default;
+$dropdown-item__margin-y: 0 !default;
+$dropdown-item__margin-x: 0 !default;
+$dropdown-item__height: 3.25rem !default;
+$dropdown-item__width: 100% !default;
+$dropdown-item__display: flex !default;
+$dropdown-item__align-items: center !default;
+$dropdown-item__justify-content: start !default;

@@ -1,0 +1,229 @@
+@use '../typography'as Typography;
+@use '../elevation'as Elevation;
+@use '../animation'as Animation;
+@use '../layout'as Layout;
+@use '../color'as Color;
+@use './'as Input;
+@use 'sass:math';
+
+.input {
+  /*  Typography  */
+  font-family: Input.$font-family;
+  font-size: Input.$font-size;
+  font-weight: Input.$font-weight;
+  line-height: Input.$line-height;
+  letter-spacing: Input.$letter-spacing;
+  text-decoration: Input.$text-decoration;
+  text-transform: Input.$text-transform;
+  text-align: Input.$text-align;
+  /*  Decoration  */
+  color: Input.$color;
+  border-width: Input.$border-width;
+  border-style: Input.$border-style;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-top-left-radius: Input.$border-radius;
+  border-bottom-left-radius: Input.$border-radius;
+  border-color: Input.$border-color;
+  background-color: Input.$background-color;
+  background-clip: padding-box;
+  /*  Solveds border appearing darker than background on text input, 
+  Solved : https://stackoverflow.com/questions/35148726/border-and-background-show-up-as-different-colors-even-when-color-values-are-sam  */
+  box-shadow: none;
+  /*  Animations & Transitions  */
+  transition: Animation.default(box-shadow), Animation.default(background-color),
+    Animation.default(transform), Animation.default(border-color),
+    Animation.default(color);
+  /*  Spacing  */
+  margin: Input.$margin;
+  padding: Input.$padding;
+  /*  Sizing  */
+  height: Input.$height;
+  // width: calc(#{Input.$width} - #{math.div(Input.$button-width,2)});
+  width: Input.$width;
+  /*  Positioning  */
+  position: relative;
+  /*  Flexbox  */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  /*  Others  */
+  overflow: hidden;
+  user-select: none;
+  outline: none;
+  cursor: text;
+
+  &:hover {
+    text-decoration: Input.$text-decoration;
+    box-shadow: none;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &::placeholder {
+    color: Color.$text-color--1;
+  }
+
+  &::-webkit-search-cancel-button {
+    display: none;
+    -webkit-appearance: none;
+  }
+
+  &-container {
+    /*  Decoration  */
+    border-radius: Input.$border-radius;
+    box-shadow: none;
+    /*  Animations & Transitions  */
+    transition: Animation.default(box-shadow);
+    /*  Spacing  */
+    margin: 0;
+    padding: 0;
+    /*  Sizing  */
+    height: Input.$height;
+    min-width: 100%;
+    max-width: 100%;
+    /*  Positioning  */
+    position: relative;
+    /*  Flexbox  */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    vertical-align: middle;
+
+    &:focus-within {
+      box-shadow: Input.$box-shadow;
+    }
+
+  }
+
+  &-search-button {
+    /*  Typography  */
+    font-family: Input.$font-family;
+    font-size: Input.$font-size;
+    font-weight: Input.$font-weight;
+    line-height: Input.$line-height;
+    letter-spacing: Input.$letter-spacing;
+    text-decoration: Input.$text-decoration;
+    text-transform: Input.$text-transform;
+    text-align: Input.$text-align;
+    /*  Decoration  */
+    color: Input.$color;
+    border-width: Input.$border-width;
+    border-style: Input.$border-style;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: Input.$border-radius;
+    border-bottom-right-radius: Input.$border-radius;
+    border-color: Input.$border-color;
+    border-left-color: Color.$border-color--1;
+    background-color: Input.$background-color;
+    background-clip: padding-box;
+    /*  Solveds border appearing darker than background on text input, 
+  Solved : https://stackoverflow.com/questions/35148726/border-and-background-show-up-as-different-colors-even-when-color-values-are-sam  */
+    box-shadow: none;
+    /*  Animations & Transitions  */
+    transition: Animation.default(box-shadow), Animation.default(background-color),
+      Animation.default(transform), Animation.default(border-color),
+      Animation.default(color);
+    /*  Spacing  */
+    margin: Input.$button-margin;
+    padding: Input.$button-padding;
+    /*  Sizing  */
+    height: Input.$height;
+    min-width: Input.$height + math.div(Input.$height, 1.5);
+    max-width: Input.$height + math.div(Input.$height, 1.5);
+    /*  Positioning  */
+    position: relative;
+    /*  Flexbox  */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    /*  Others  */
+    overflow: hidden;
+    user-select: none;
+    outline: none;
+    cursor: pointer;
+
+    &-icon,
+    &-icon::before,
+    &-icon::after {
+      /*  Typography  */
+      font-family: Input.$font-family;
+      font-size: Input.$font-size;
+      font-weight: Input.$font-weight;
+      line-height: Typography.$line-height--0;
+      letter-spacing: Input.$letter-spacing;
+      text-decoration: Input.$text-decoration;
+      text-transform: Input.$text-transform;
+      text-align: Input.$text-align;
+    }
+
+    &:hover {
+      color: Color.$theme--text-color;
+      border-color: Color.$theme--color;
+      background-color: Color.$theme--color;
+    }
+  }
+
+  @include Layout.breakpoint("sm", max) {
+    /*  Decoration  */
+    border-top-left-radius: Input.$border-radius;
+    border-top-right-radius: Input.$border-radius;
+    border-bottom-left-radius: Input.$border-radius;
+    border-bottom-right-radius: Input.$border-radius;
+    /*  Spacing  */
+    margin-bottom: 1rem;
+    // padding: 0.25rem;
+    /*  Sizing  */
+    max-width: 100%;
+
+    &-container {
+      /*  Spacing  */
+      padding: 0;
+      /*  Sizing  */
+      height: max-content;
+      flex-direction: column;
+      flex-wrap: nowrap;
+
+      &:focus-within {
+        box-shadow: none;
+      }
+    }
+
+    &-search-button {
+      border-top-left-radius: Input.$border-radius;
+      border-top-right-radius: Input.$border-radius;
+      border-bottom-left-radius: Input.$border-radius;
+      border-bottom-right-radius: Input.$border-radius;
+      min-width: 10rem;
+      max-width: 100%
+    }
+  }
+}
+
+/*  Primary  */
+@include Input.theme("primary", Color.$theme--color, Color.$theme--text-color);
+/*  Secondary  */
+@include Input.theme("secondary",
+  Color.$theme--secondary--color,
+  Color.$theme--secondary--text-color);
+/*  Info  */
+@include Input.theme("info",
+  Color.$theme--info--color,
+  Color.$theme--info--text-color);
+/*  Success  */
+@include Input.theme("success",
+  Color.$theme--success--color,
+  Color.$theme--success--text-color);
+/*  Warning  */
+@include Input.theme("warning",
+  Color.$theme--warning--color,
+  Color.$theme--warning--text-color);
+/*  Error  */
+@include Input.theme("error", Color.$theme--error--color, Color.$theme--error--text-color);
